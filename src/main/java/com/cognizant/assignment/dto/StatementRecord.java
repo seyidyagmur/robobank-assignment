@@ -3,7 +3,7 @@ package com.cognizant.assignment.dto;
 import lombok.*;
 
 import java.math.BigDecimal;
-
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
