@@ -3,24 +3,23 @@ package com.cognizant.assignment.controller;
 import com.cognizant.assignment.dto.CustomResponse;
 import com.cognizant.assignment.dto.Status;
 import com.cognizant.assignment.model.StatementRequest;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class StatementValidationControllerTest {
     private static String IBAN="AL47212110090000000235698741";
@@ -31,7 +30,7 @@ public class StatementValidationControllerTest {
 
     @Autowired
     protected TestRestTemplate restTemplate;
-    @Before
+    @BeforeEach
     public void setUp(){
         this.url = "http://localhost:" + port + "/api/v1/validate";
     }

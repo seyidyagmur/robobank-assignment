@@ -1,25 +1,20 @@
 package com.cognizant.assignment.service;
 
-import com.cognizant.assignment.dto.StatementRecord;
 import com.cognizant.assignment.exception.InternalServerException;
 import com.cognizant.assignment.exception.JsonParsingException;
 import com.cognizant.assignment.model.StatementRequest;
-import com.cognizant.assignment.service.impl.StatementValidationServiceImpl;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.platform.commons.util.CollectionUtils;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
-import java.math.BigDecimal;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class StatementValidationServiceTest {
 
